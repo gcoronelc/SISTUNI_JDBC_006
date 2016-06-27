@@ -1,7 +1,7 @@
 package pe.egcc.eurekaapp.view;
 
-import javax.swing.JOptionPane;
 import pe.egcc.eurekaapp.controller.LogonController;
+import pe.egcc.eurekaapp.service.impl.Mensaje;
 
 /**
  *
@@ -150,7 +150,7 @@ public class LogonView extends javax.swing.JDialog {
       this.dispose();
       FormularioMDI.main(null);
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(rootPane, e.getMessage());
+      Mensaje.showError(rootPane, e.getMessage());
     }
   }//GEN-LAST:event_btnIngresarActionPerformed
 

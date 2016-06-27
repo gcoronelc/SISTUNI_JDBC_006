@@ -93,12 +93,12 @@ public class EmpleadoServiceImpl implements EmpleadoServiceEspec{
   public Empleado rowToBean(ResultSet rs) throws SQLException {
     Empleado bean = new Empleado();
     bean.setCodigo(rs.getString("chr_emplcodigo"));
-    bean.setCodigo(rs.getString("vch_emplpaterno"));
-    bean.setCodigo(rs.getString("vch_emplmaterno"));
-    bean.setCodigo(rs.getString("vch_emplnombre"));
-    bean.setCodigo(rs.getString("vch_emplciudad"));
-    bean.setCodigo(rs.getString("vch_empldireccion"));
-    bean.setCodigo(rs.getString("vch_emplusuario"));
+    bean.setPaterno(rs.getString("vch_emplpaterno"));
+    bean.setMaterno(rs.getString("vch_emplmaterno"));
+    bean.setNombre(rs.getString("vch_emplnombre"));
+    bean.setCiudad(rs.getString("vch_emplciudad"));
+    bean.setDireccion(rs.getString("vch_empldireccion"));
+    bean.setUsuario(rs.getString("vch_emplusuario"));
     return bean;
   }
   

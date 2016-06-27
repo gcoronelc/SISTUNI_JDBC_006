@@ -1,5 +1,7 @@
-
 package pe.egcc.eurekaapp.view;
+
+import pe.egcc.eurekaapp.domain.Empleado;
+import pe.egcc.eurekaapp.util.Memoria;
 
 /**
  *
@@ -12,6 +14,14 @@ public class FormularioMDI extends javax.swing.JFrame {
 
   public FormularioMDI() {
     initComponents();
+    establecerTitulo();
+    this.setExtendedState(MAXIMIZED_BOTH);
+  }
+  
+  private void establecerTitulo(){
+    Empleado bean = (Empleado) Memoria.get("usuario");
+    String titulo = "EUREKA BANK    [Usuario:" + bean.getUsuario() + "]";
+    this.setTitle(titulo);
   }
 
   /**
