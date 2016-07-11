@@ -1,8 +1,12 @@
 package pe.egcc.eurekaapp.controller;
 
+import java.util.List;
 import java.util.Map;
+import pe.egcc.eurekaapp.domain.Combo;
 import pe.egcc.eurekaapp.domain.Empleado;
+import pe.egcc.eurekaapp.service.espec.ComboServiceEspec;
 import pe.egcc.eurekaapp.service.espec.CuentaServiceEspec;
+import pe.egcc.eurekaapp.service.impl.ComboServiceImpl;
 import pe.egcc.eurekaapp.service.impl.CuentaServiceImpl;
 import pe.egcc.eurekaapp.util.Memoria;
 
@@ -27,5 +31,17 @@ public class CuentaController {
     CuentaServiceEspec service = new CuentaServiceImpl();
     return service.datosCuenta(cuenta);
   }
+  
+  public List<Combo> getComboSucursales() {
+    ComboServiceEspec service = new ComboServiceImpl();
+    return service.getSucursales();
+  }
+  
+  public List<Combo> getComboCuentas(String sucursal) {
+    ComboServiceEspec service = new ComboServiceImpl();
+    return service.getCuentas(sucursal);
+  }
+  
+  
   
 }

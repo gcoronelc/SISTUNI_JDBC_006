@@ -38,7 +38,7 @@ public class FormularioMDI extends javax.swing.JFrame {
     jButton2 = new javax.swing.JButton();
     jButton3 = new javax.swing.JButton();
     jSeparator5 = new javax.swing.JToolBar.Separator();
-    jButton4 = new javax.swing.JButton();
+    btnReporteMovimientos = new javax.swing.JButton();
     jButton5 = new javax.swing.JButton();
     jSeparator6 = new javax.swing.JToolBar.Separator();
     btnArchivoSalir = new javax.swing.JButton();
@@ -67,7 +67,7 @@ public class FormularioMDI extends javax.swing.JFrame {
     jMenuItem14 = new javax.swing.JMenuItem();
     jMenuItem15 = new javax.swing.JMenuItem();
     menuReporte = new javax.swing.JMenu();
-    jMenuItem16 = new javax.swing.JMenuItem();
+    menuReporteMovimientos = new javax.swing.JMenuItem();
     jMenuItem17 = new javax.swing.JMenuItem();
     jMenuItem18 = new javax.swing.JMenuItem();
     menuUtil = new javax.swing.JMenu();
@@ -104,11 +104,17 @@ public class FormularioMDI extends javax.swing.JFrame {
     jToolBar1.add(jButton3);
     jToolBar1.add(jSeparator5);
 
-    jButton4.setText("jButton4");
-    jButton4.setFocusable(false);
-    jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-    jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-    jToolBar1.add(jButton4);
+    btnReporteMovimientos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pe/egcc/eurekaapp/img/reporte-movimientos.png"))); // NOI18N
+    btnReporteMovimientos.setToolTipText("Reporte de Movimientos");
+    btnReporteMovimientos.setFocusable(false);
+    btnReporteMovimientos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnReporteMovimientos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnReporteMovimientos.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnReporteMovimientosActionPerformed(evt);
+      }
+    });
+    jToolBar1.add(btnReporteMovimientos);
 
     jButton5.setText("jButton5");
     jButton5.setFocusable(false);
@@ -206,8 +212,13 @@ public class FormularioMDI extends javax.swing.JFrame {
 
     menuReporte.setText("Reporte");
 
-    jMenuItem16.setText("jMenuItem16");
-    menuReporte.add(jMenuItem16);
+    menuReporteMovimientos.setText("Movimientos");
+    menuReporteMovimientos.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        menuReporteMovimientosActionPerformed(evt);
+      }
+    });
+    menuReporte.add(menuReporteMovimientos);
 
     jMenuItem17.setText("jMenuItem17");
     menuReporte.add(jMenuItem17);
@@ -263,6 +274,14 @@ public class FormularioMDI extends javax.swing.JFrame {
     cargarFormulario(ProcDepositoView.class);
   }//GEN-LAST:event_btnDepositoActionPerformed
 
+  private void menuReporteMovimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuReporteMovimientosActionPerformed
+    cargarFormulario(RepoMovimientosView.class);
+  }//GEN-LAST:event_menuReporteMovimientosActionPerformed
+
+  private void btnReporteMovimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteMovimientosActionPerformed
+    cargarFormulario(RepoMovimientosView.class);
+  }//GEN-LAST:event_btnReporteMovimientosActionPerformed
+
   /**
    * @param args the command line arguments
    */
@@ -301,10 +320,10 @@ public class FormularioMDI extends javax.swing.JFrame {
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnArchivoSalir;
   private javax.swing.JButton btnDeposito;
+  private javax.swing.JButton btnReporteMovimientos;
   private javax.swing.JDesktopPane desktopPane;
   private javax.swing.JButton jButton2;
   private javax.swing.JButton jButton3;
-  private javax.swing.JButton jButton4;
   private javax.swing.JButton jButton5;
   private javax.swing.JMenuItem jMenuItem1;
   private javax.swing.JMenuItem jMenuItem10;
@@ -313,7 +332,6 @@ public class FormularioMDI extends javax.swing.JFrame {
   private javax.swing.JMenuItem jMenuItem13;
   private javax.swing.JMenuItem jMenuItem14;
   private javax.swing.JMenuItem jMenuItem15;
-  private javax.swing.JMenuItem jMenuItem16;
   private javax.swing.JMenuItem jMenuItem17;
   private javax.swing.JMenuItem jMenuItem18;
   private javax.swing.JMenuItem jMenuItem19;
@@ -338,6 +356,7 @@ public class FormularioMDI extends javax.swing.JFrame {
   private javax.swing.JMenu menuProceso;
   private javax.swing.JMenuItem menuProcesoDeposito;
   private javax.swing.JMenu menuReporte;
+  private javax.swing.JMenuItem menuReporteMovimientos;
   private javax.swing.JMenu menuTabla;
   private javax.swing.JMenu menuUtil;
   // End of variables declaration//GEN-END:variables
