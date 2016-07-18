@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13bc15d6-5148-4a27-a579-e545ea6b53fd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="USUARIO" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT IDCLIENTE,NOMBRE,DIRECCION, RUCDNI,TELEFONO FROM CLIENTE]]>
+	</queryString>
+	<field name="IDCLIENTE" class="java.lang.String"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="DIRECCION" class="java.lang.String"/>
+	<field name="RUCDNI" class="java.lang.String"/>
+	<field name="TELEFONO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="57" y="10" width="456" height="33" forecolor="#FFFFFF" backcolor="#0000CC" uuid="d94f2b60-ac32-495b-98b2-320813facfd8"/>
+				<textElement textAlignment="Center">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[TRAVISA SA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="20" y="54" width="209" height="20" uuid="5ebfa0c9-4033-4ab6-a0de-c5054f725905"/>
+				<textFieldExpression><![CDATA["EMPLEADO:"+$P{USUARIO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="12" width="350" height="36" forecolor="#33CCFF" backcolor="#FFFFFF" uuid="df1885f5-9941-442c-868a-a2221dbc2a6f"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[LISTADO DE CLIENTES]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="2" width="100" height="20" uuid="08ff78e7-73bc-4ec8-b43f-f1cacb5ddee8"/>
+				<text><![CDATA[IDCLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="2" width="100" height="20" uuid="ab22f091-ad0a-4a4d-a118-f66acdc6306e"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="2" width="100" height="20" uuid="0a365173-7968-490b-94a2-d407bc102f9b"/>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="2" width="100" height="20" uuid="f03faa6c-9811-4717-81fd-e65e92bf1076"/>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="35" width="555" height="1" uuid="872946c3-a6a3-4b93-b4d0-64d4d169ede8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="22" width="100" height="20" uuid="20239778-b5ea-4967-beb3-2a801216e268"/>
+				<textFieldExpression><![CDATA[$F{IDCLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="22" width="100" height="20" uuid="245a9c68-759b-4add-84b6-21b4889523fc"/>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="263" y="22" width="100" height="20" uuid="aaab8cda-d6ad-4dc5-9639-dcb7cfa0cb05"/>
+				<textFieldExpression><![CDATA[$F{DIRECCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="22" width="100" height="20" uuid="8f581be8-c53a-4486-856f-2423009928e0"/>
+				<textFieldExpression><![CDATA[$F{TELEFONO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
